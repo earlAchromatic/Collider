@@ -1,12 +1,12 @@
 <template>
-  <nav class="cluster outer-cluster" ref="navbar">
+  <div class="cluster outer-cluster" ref="navbar">
     <img :src="imageUrl" alt="" />
     <ul class="cluster inner-cluster">
       <li v-for="link in parseLinks" :key="link">
         <a :href="link.linkUrl" v-text="link.name"> </a>
       </li>
     </ul>
-  </nav>
+  </div>
 </template>
 
 <script lang="ts">
@@ -35,7 +35,6 @@ export default defineComponent({
   methods: {
     getNavHeight: function (): number | void {
       let nav = this.$refs.navbar as InstanceType<typeof HTMLElement>;
-      console.log(nav);
       if (nav) {
         let navH: number = nav.offsetHeight;
         return navH;
@@ -46,7 +45,7 @@ export default defineComponent({
 </script>
 
 <style scoped lang="sass">
-@import '../styles/style'
+@import '../../../styles/style'
 
 root
     --nav-height: 1rem
@@ -55,12 +54,10 @@ img
     width: 4rem
     padding: 0.5rem
 
-nav
-    position: fixed
-    width: 100vw
-    z-index: 200
-    top: 0
+div
+    width: 100%
     box-shadow: var(--shadow)
+    background: var(--primary)
 
 ul
     height: 100%

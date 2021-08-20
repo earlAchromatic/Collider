@@ -16,16 +16,36 @@
     <script src="https://unpkg.com/vue@next"></script>
   </head>
   <body>
-    <my-element
-      image-path="https://image.flaticon.com/icons/png/512/4995/4995521.png"
-      links-array="[
-      {'name':'home','linkUrl':'\/'},
-      {'name':'about','linkUrl':'\/about'},
-      {'name':'blog','linkUrl':'\/blog'},
-      {'name':'contact','linkUrl':'\/contact'}
-      ]"
-    >
-    </my-element>
+    <navbar-frame>
+      <cluster-nav
+        image-path="https://image.flaticon.com/icons/png/512/4995/4995521.png"
+        links-array="[
+          {'name':'home','linkUrl':'\/'},
+          {'name':'about','linkUrl':'\/about'},
+          {'name':'blog','linkUrl':'\/blog'},
+          {'name':'contact','linkUrl':'\/contact'}
+          ]"
+      >
+      </cluster-nav>
+      <cluster-nav
+        slot="drawer-content"
+        image-path="https://image.flaticon.com/icons/png/512/5312/5312291.png"
+        links-array="[
+          {'name':'apt','linkUrl':'\/'},
+          {'name':'riddle','linkUrl':'\/about'},
+          {'name':'cheater','linkUrl':'\/blog'},
+          {'name':'farm','linkUrl':'\/contact'}
+          ]"
+      >
+      </cluster-nav>
+    </navbar-frame>
+
+    <full-page></full-page>
+    <full-page></full-page>
+    <full-page>Data Here</full-page>
     <script src="../dist/my-first-webpack.bundle.js"></script>
+    <script>
+      window.lib.register();
+    </script>
   </body>
 </html>

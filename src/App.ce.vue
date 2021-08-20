@@ -6,7 +6,7 @@
 
 <script>
 import { defineComponent } from "vue";
-import clusterNav from "./components/ClusterNav.ce.vue";
+import clusterNav from "./components/Molecules/Navbars/ClusterNav.ce.vue";
 
 export default defineComponent({
   name: "App",
