@@ -24,6 +24,7 @@
     "webpack-cli": "^4.8.0"
   },
   "dependencies": {
+    "mitt": "^3.0.0",
     "vue": "^3.2.4"
   }
 }

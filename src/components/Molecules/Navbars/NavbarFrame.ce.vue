@@ -10,6 +10,7 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 import DrawerComponent from "./DrawerComponent.ce.vue";
+import emitter from "../../../emitter";
 
 export default defineComponent({
   name: "NavbarFrame",
@@ -18,8 +19,7 @@ export default defineComponent({
   },
   methods: {
     emitDrawerEvent: function (): void {
-      console.log("emit sd");
-      this.$emit("shift-drawer");
+      emitter.emit("shift-drawer");
     },
   },
 });
@@ -43,5 +43,5 @@ nav>*[name="drawer-content"]::slotted(*)
 ::v-deep(.draw)
     position: relative
     top: 1rem
-    transition: all 1s ease-in-out
+    transition: all 0.5s ease-in-out
 </style>
