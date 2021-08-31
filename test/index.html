@@ -16,33 +16,67 @@
     <script src="https://unpkg.com/vue@next"></script>
   </head>
   <body>
-    <navbar-frame>
-      <cluster-nav
-        image-path="https://image.flaticon.com/icons/png/512/4995/4995521.png"
-        links-array="[
-          {'name':'home','linkUrl':'\/'},
-          {'name':'about','linkUrl':'\/about'},
-          {'name':'blog','linkUrl':'\/blog'},
-          {'name':'contact','linkUrl':'\/contact'}
-          ]"
-      >
-      </cluster-nav>
-      <cluster-nav
-        slot="drawer-content"
-        image-path="https://image.flaticon.com/icons/png/512/5312/5312291.png"
-        links-array="[
-          {'name':'apt','linkUrl':'\/'},
-          {'name':'riddle','linkUrl':'\/about'},
-          {'name':'cheater','linkUrl':'\/blog'},
-          {'name':'farm','linkUrl':'\/contact'}
-          ]"
-      >
-      </cluster-nav>
-    </navbar-frame>
-
-    <full-page></full-page>
-    <full-page></full-page>
-    <full-page>Data Here</full-page>
+    <collider-page>
+      <navbar-frame slot="navbar-insert" trigger-scroll>
+        <cluster-nav
+          links-array="[
+            {'name':'home','linkUrl':'\/'},
+            {'name':'about','linkUrl':'\/about'},
+            {'name':'blog','linkUrl':'\/blog'},
+            {'name':'contact','linkUrl':'\/contact'}
+            ]"
+        >
+        </cluster-nav>
+        <cluster-nav
+          image-path="./images/001-satay.png"
+          slot="drawer-content"
+          links-array="[
+            {'name':'arches','linkUrl':'\/'},
+            {'name':'doghouse','linkUrl':'\/about'},
+            {'name':'blink','linkUrl':'\/blog'},
+            {'name':'tractor','linkUrl':'\/contact'}
+            ]"
+        >
+        </cluster-nav>
+      </navbar-frame>
+      <full-page>
+        <h1>Title</h1>
+        <p>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corrupti
+          quod ipsum iste odit eius autem laborum quis repellendus, molestias
+          iure facere itaque molestiae labore possimus excepturi non placeat
+          commodi repellat.
+        </p>
+      </full-page>
+      <full-page></full-page>
+      <full-page>
+        <four-column>
+          <ul slot="column-1">
+            <li>Jacob</li>
+            <li>Richie</li>
+          </ul>
+          <ul slot="column-3">
+            <li>Dramaticus</li>
+            <li>Illie</li>
+          </ul>
+          <ul slot="column-2">
+            <li>Nova</li>
+            <li>Karman</li>
+          </ul>
+          <ul slot="f-column-4">
+            <li>Norm</li>
+            <li>Hiscock</li>
+          </ul>
+        </four-column>
+      </full-page>
+      <full-page>Data Here</full-page>
+    </collider-page>
+    <mega-footer
+      ><ul slot="f-column-4">
+        <li>Norm</li>
+        <li>Hiscock</li>
+      </ul>
+    </mega-footer>
     <script src="../dist/my-first-webpack.bundle.js"></script>
     <script>
       window.lib.register();

@@ -14,6 +14,6 @@ export default defineComponent({
 
 <style lang="sass" scoped>
 section
-    width: 100vw
+
     height: 100vh
 </style>

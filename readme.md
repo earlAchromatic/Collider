@@ -12,6 +12,10 @@ Collider is a vue-built custom Element Library (not yet Web Component Compliant,
 
 - Components should be designed to be intrinsic. Dimensionally, they are driven by the content that inhabits them - see [Atomic Components](#atomic-components).
 
+- Vue + customElement export is leveraged so that the components can be used both inside of a Vue application and out in the wild (still requires vue library, but the site does not have to run on vue, great for less complex sites). The result is one library with a ton of flexibility.
+
+- An ecosystem that includes a shadow engine that maps to layers and animations for components can use the css variable and component schema. This abstracts away different aesthetic components of the library for different use cases.
+
 ### Molecular Components
 
 Molecular components are nestable template components that take in data and pass it down-stream as necessary.
@@ -49,3 +53,29 @@ see `test/index.html` and run vscode liveserver to see example component impleme
 Off to the races!
 
 ## Future Plans
+
+### Components
+
+#### Navbars
+
+- hamburger mobile responsive basic navbar
+- dropdown menu capable navbar
+
+#### Sidebars
+
+#### Modal
+
+#### Page Layouts (see njks in 11ty layouts)
+
+#### Pop-outs
+
+#### Forms (e.g. subscription forms)
+
+#### Footers
+
+- simple 3 part footer
+- mega footer
+
+#### Sections
+
+- 50% split page content (eg image and text side by side)

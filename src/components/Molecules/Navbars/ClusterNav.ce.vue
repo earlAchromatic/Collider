@@ -1,7 +1,9 @@
 <template>
-  <div class="cluster outer-cluster" ref="navbar">
-    <img :src="imageUrl" alt="" />
-    <ul class="cluster inner-cluster">
+  <div class="cluster outer-cluster">
+    <template v-if="imageUrl">
+      <img :src="imageUrl" alt="" />
+    </template>
+    <ul class="cluster inner-cluster" :class="{ 'ul-Full-Width': !imageUrl }">
       <li v-for="link in parseLinks" :key="link">
         <a :href="link.linkUrl" v-text="link.name"> </a>
       </li>
@@ -17,6 +19,7 @@ export default defineComponent({
   props: {
     imagePath: String,
     linksArray: String,
+    lastItemUnique: Boolean,
   },
   computed: {
     parseLinks(): object | void {
@@ -32,15 +35,7 @@ export default defineComponent({
       links: [],
     };
   },
-  methods: {
-    getNavHeight: function (): number | void {
-      let nav = this.$refs.navbar as InstanceType<typeof HTMLElement>;
-      if (nav) {
-        let navH: number = nav.offsetHeight;
-        return navH;
-      }
-    },
-  },
+  methods: {},
 });
 </script>
 
@@ -61,6 +56,9 @@ div
 
 ul
     height: 100%
+
+.ul-Full-Width
+    width: 100%
 
 li
     color: inherit
